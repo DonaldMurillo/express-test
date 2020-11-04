@@ -30,7 +30,7 @@ export interface Employee extends DbPersonBase {
 }
 
 export interface User extends DbPersonBase {
-
+    //TODO: WHEN WE CREATE STORE FRONT
 } 
 
 

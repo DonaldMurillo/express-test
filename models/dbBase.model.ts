@@ -6,7 +6,7 @@ export interface DbBase {
     _id: string;
     isActive: boolean;
     createdBy: string;
-    creadedOn: Date;
+    createdOn: Date;
     modifiedBy: string;
     modifiedOn: Date;
 } 

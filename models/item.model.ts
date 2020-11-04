@@ -6,7 +6,6 @@ export interface Availability {
     stockDate?: Date;
 }
 
-
 export interface Item extends DbBase {
     name: string;
     category: string;
