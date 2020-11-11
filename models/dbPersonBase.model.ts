@@ -2,6 +2,17 @@ import { DbBase } from "./dbBase.model";
 
 //TODO: CREATE ADDRESS INTERFACE
 
+/**
+ *  Employee: handles store
+ *      roles: Admin, manager, clerk
+ *  supplier: supplies the store
+ *  user: uses the store  
+ * 
+ */
+
+export type InternalRole = 'admin' | 'manager' | 'clerk';
+export type ExternalRole = 'accounting' | 'sales' | 'shipping' | 'management';
+
 export interface DbPersonBase extends DbBase {
     name: string;
     email: string;
@@ -13,11 +24,10 @@ export interface DbPersonBase extends DbBase {
 }
 
 export interface SupplierContact extends DbPersonBase  {
-    role: string;
+    role: ExternalRole;
     cellPhone: string;
 }
 
-//extend basic db class for id and shet
 export interface Supplier extends DbPersonBase {
     items: string[];
     website: string;
@@ -25,7 +35,7 @@ export interface Supplier extends DbPersonBase {
 }
 
 export interface Employee extends DbPersonBase {
-    role: string;
+    role: InternalRole;
     cellPhone: string;
 }
 
