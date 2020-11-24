@@ -20,7 +20,7 @@ router.get(path, async (req: Request, res: Response) => {
 router.post(path + '/add', async (req: Request, res: Response) => {
     //TODO: ADD A METHOD TO GENERATE CREATED/MODIFIED INFO
     //TODO: RECIEVE EMPLOYEE INFO AND USE IT IN initializeEntry(user)
-    let newSupplier= { ...req.body, ...initializeEntry() } as Supplier;
+    let newSupplier = { ...req.body, ...initializeEntry() } as Supplier;
     newSupplier = {...newSupplier, contacts: newSupplier.contacts?.map(c => {return {...c, ...initializeEntry()}})}
     console.log(newSupplier);
     const supplier = SupplierController.build(newSupplier);
